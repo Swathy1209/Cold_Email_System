@@ -220,77 +220,7 @@ The UAE rewrite prompt is the most carefully engineered. It lists 8 specific cul
 
 ---
 
-## 🎥 Loom Script (3–5 Minutes)
 
----
-
-**[0:00–0:20] Opening**
-
-"Hi — I'm walking you through ColdCraft AI, a mini B2B cold email system I built using Python, Streamlit, and the OpenAI API. It doesn't just generate emails — it generates, adapts, personalises, and iterates. Let me show you how it works."
-
----
-
-**[0:20–0:50] System Overview**
-
-"The system has four files. Prompts dot py stores all the prompt templates — centralised and versioned. LLM dot py handles every API call — one function per task, nothing coupled. Utils dot py has helpers for validation, export, and diff analysis. And app dot py is the Streamlit UI that ties it all together in five clean tabs."
-
-"The reason I architected it this way is so any prompt can be swapped, any function can be tested in isolation, and the UI doesn't care about the generation logic."
-
----
-
-**[0:50–1:40] Walking Through the Inputs**
-
-"On the left sidebar, you enter the campaign details — product, target audience, and region. Then the recipient details — name, role, company type, location, and any LinkedIn notes you've gathered."
-
-"These aren't cosmetic fields. The name and role feed the personalisation step. The LinkedIn notes are directly injected into the opener prompt. The region controls whether we trigger UAE-specific rewriting logic."
-
-"I'm using: ERP software for mid-sized companies, targeting CFOs, region UAE, recipient is Ahmed Al-Rashidi, CFO at a logistics company in Dubai."
-
----
-
-**[1:40–2:20] Email and Subject Lines**
-
-"Click generate — the system runs five sequential API calls. First, it drafts the email. You can see it follows a tight structure: specific hook, problem, value prop, social proof, soft CTA. Under 160 words. These aren't arbitrary constraints — they're based on what actually performs in B2B cold outreach."
-
-"The subject lines come back as structured JSON — five options, each with a score and a one-sentence explanation of why it works. The colour coding — green, yellow, red — helps you quickly find the strongest one."
-
----
-
-**[2:20–3:10] The UAE Rewrite — Why It Matters**
-
-"This is the step I'm most proud of. The UAE version isn't a polished global email. It's structurally and culturally different."
-
-"In Gulf business culture, you don't open with a hook and close with 'are you free Thursday?' That reads as abrupt, transactional, even disrespectful. Business relationships in the UAE are built on trust and mutual acknowledgment of standing — before any selling happens."
-
-"So the rewrite: switches to a formal salutation, removes all time pressure, adds acknowledgment of the company's growth, replaces aggressive CTAs with 'I would be honoured to arrange a meeting at your convenience', and closes with 'With respect and regards.'"
-
-"I built eight specific cultural requirements into the prompt — because without that level of specificity, language models default to slightly formal English, not actually GCC-appropriate communication."
-
----
-
-**[3:10–3:50] Iteration Logic**
-
-"The final tab shows the most important part of any outreach system — what do you do when it's not working?"
-
-"I assume the email got low reply rates and ask the model to diagnose why, then rewrite it. The diagnosis is specific: the social proof was vague, the CTA was passive, the hook didn't quantify the pain. The improved version fixes each of these — adds a specific number in the first line, names a recognisable brand as proof, and proposes specific days for the call."
-
-"The diff analysis in the UI tells you if the improvement was genuinely significant or just a surface rewrite."
-
----
-
-**[3:50–4:20] Closing**
-
-"The entire system runs locally in about 30 seconds per generation. The code is clean enough that you could swap OpenAI for any other LLM, add a database to store campaigns, or wire in real reply rate data to make the iteration loop genuinely data-driven."
-
-"The biggest limitation is that without real performance feedback, the 'improvement' is still just the model's best guess. The next step would be connecting this to a simple email tracker to close that loop."
-
-"That's ColdCraft AI. Happy to walk through any specific component in more detail."
-
----
-
-*End of script*
-
----
 
 ## ✅ Evaluation Checklist
 
@@ -301,7 +231,7 @@ The UAE rewrite prompt is the most carefully engineered. It lists 8 specific cul
 | UAE cultural rewrite (not a minor edit) | ✅ |
 | Personalised opening line | ✅ |
 | Iteration with before/after + reasoning | ✅ |
-| Working system (Streamlit + OpenAI) | ✅ |
+| Working system (Streamlit + groq) | ✅ |
 | System thinking write-up | ✅ |
 | Loom script | ✅ |
 | Modular architecture | ✅ |
